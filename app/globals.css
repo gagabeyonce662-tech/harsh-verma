@@ -1,21 +1,43 @@
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
 @import "tailwindcss";
 
 @theme {
-  /* Your custom colors from the HTML */
-  --color-primary: #e60000;
-  --color-surface: #050505;
-  --color-surface-container: #111111;
+  /* Your color palette from the HTML */
+  --color-primary: #a41200;
+  --color-primary-container: #cd250d;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffe5e1;
+
+  --color-surface: #f8f9fd;
+  --color-surface-container: #eceef1;
+  --color-surface-container-low: #f2f4f7;
+  --color-surface-container-high: #e6e8ec;
+  --color-surface-container-highest: #e1e2e6;
+  --color-surface-container-lowest: #ffffff;
+
+  --color-on-surface: #191c1f;
+  --color-on-surface-variant: #5c403b;
+
+  --color-tertiary: #004caf;
 
   /* Your custom fonts */
   --font-headline: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-body: "Work Sans", sans-serif;
 }
 
-/* Base styles */
+/* Base styles to match your HTML */
 @layer base {
   body {
     background-color: var(--color-surface);
-    color: white;
+    color: var(--color-on-surface);
     font-family: var(--font-body);
+    min-height: max(884px, 100dvh);
   }
 }
