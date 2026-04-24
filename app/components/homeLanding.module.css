@@ -1141,6 +1141,27 @@
   padding-top: 20px;
 }
 
+@media (min-width: 769px) {
+  .page :global(.testimonials-grid) {
+    align-items: stretch;
+  }
+
+  .page :global(.testi-card) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .page :global(.testi-text) {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .page :global(.testi-author) {
+    margin-top: 24px;
+  }
+}
+
 .page :global(.testi-avatar) {
   width: 46px;
   height: 46px;
@@ -1167,6 +1188,14 @@
 .page :global(.testi-name span) {
   font-size: 0.75rem;
   color: var(--text-muted);
+}
+
+.page :global(.testi-stars-inline) {
+  color: #ff3333;
+  font-size: 0.72rem;
+  margin-top: 6px;
+  display: flex;
+  gap: 3px;
 }
 
 .page :global(.areas-grid) {

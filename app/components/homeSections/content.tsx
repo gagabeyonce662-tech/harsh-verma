@@ -258,20 +258,19 @@ export function TestimonialsSection() {
         <div className="testimonials-grid">
           {testimonials.map((testimonial) => (
             <div key={testimonial.name} className="testi-card">
-              <div className="testi-quote">&quot;</div>
-              <div className="testi-stars">
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-              </div>
               <p className="testi-text">{testimonial.text}</p>
               <div className="testi-author">
                 <div className="testi-avatar">{testimonial.avatar}</div>
                 <div className="testi-name">
                   <strong>{testimonial.name}</strong>
                   <span>Verified Google Review</span>
+                  <div className="testi-stars-inline" aria-hidden="true">
+                    <i className="fa fa-star" />
+                    <i className="fa fa-star" />
+                    <i className="fa fa-star" />
+                    <i className="fa fa-star" />
+                    <i className="fa fa-star" />
+                  </div>
                 </div>
               </div>
             </div>
