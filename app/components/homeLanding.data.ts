@@ -3,7 +3,7 @@ export const CONTACT = {
   phoneDisplayCompact: "(365) 773-4287",
   phoneHref: "tel:3657734287",
   whatsappHref: "https://wa.me/13657734287",
-  emailPrimary: "info@dieselperformance.ca",
+  emailPrimary: "dieselperformancetr@hotmail.com",
   emailSecondary: "Dieselperformancetr@hotmail.com",
 };
 
