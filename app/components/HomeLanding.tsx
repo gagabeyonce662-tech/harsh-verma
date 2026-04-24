@@ -15,7 +15,7 @@ import {
   TrustStrip,
   WhySection,
   WorkGallerySection,
-} from "./homeLandingSections";
+} from "./homeSections";
 
 function formDataToRecord(formData: FormData): Record<string, FormDataEntryValue> {
   const data: Record<string, FormDataEntryValue> = {};
