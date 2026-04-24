@@ -2,10 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
 
-/* Import Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
-
 @import "tailwindcss";
 
 @theme {
@@ -30,6 +26,27 @@
   /* Your custom fonts */
   --font-headline: "Space Grotesk", sans-serif;
   --font-body: "Work Sans", sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-primary: #ff5a44;
+  --color-primary-container: #b32914;
+  --color-on-primary: #1e0a06;
+  --color-on-primary-container: #ffd9d2;
+  --color-surface: #0d0f12;
+  --color-surface-container: #171b21;
+  --color-surface-container-low: #11151a;
+  --color-surface-container-high: #1c2128;
+  --color-surface-container-highest: #242b34;
+  --color-surface-container-lowest: #080a0d;
+  --color-on-surface: #e9edf1;
+  --color-on-surface-variant: #bec7d0;
+  --color-tertiary: #7db2ff;
 }
 
 /* Base styles to match your HTML */

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
@@ -39,14 +40,9 @@ export default function Header() {
         </Link>
       </nav>
 
-      {/* Action / User */}
+      {/* Action / Theme */}
       <div className="flex items-center">
-        <button
-          aria-label="User profile"
-          className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors"
-        >
-          <span className="material-symbols-outlined">person</span>
-        </button>
+        <ThemeToggle />
       </div>
     </header>
   );

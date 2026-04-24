@@ -12,6 +12,71 @@
   font-family: "Open Sans", sans-serif;
 }
 
+:global(html[data-theme="light"]) .page {
+  --black: #f8f9fd;
+  --black-mid: #eceef1;
+  --text: #191c1f;
+  --text-muted: #5c403b;
+  --border: rgba(25, 28, 31, 0.14);
+}
+
+:global(html[data-theme="light"]) .page :global(.section-title) {
+  color: #000;
+}
+
+:global(html[data-theme="light"]) .page :global(.topbar) {
+  background: rgba(248, 249, 253, 0.96);
+  border-bottom-color: rgba(25, 28, 31, 0.14);
+  box-shadow: 0 2px 16px rgba(25, 28, 31, 0.08);
+}
+
+:global(html[data-theme="light"]) .page :global(.mobile-nav) {
+  background: rgba(248, 249, 253, 0.98);
+  border-bottom-color: rgba(224, 21, 21, 0.4);
+}
+
+:global(html[data-theme="light"]) .page :global(.nav-links a),
+:global(html[data-theme="light"]) .page :global(.mobile-nav a),
+:global(html[data-theme="light"]) .page :global(.service-card h3),
+:global(html[data-theme="light"]) .page :global(.why-list-text strong),
+:global(html[data-theme="light"]) .page :global(.testi-name strong),
+:global(html[data-theme="light"]) .page :global(.contact-form-wrap h3),
+:global(html[data-theme="light"]) .page :global(.contact-info-item span),
+:global(html[data-theme="light"]) .page :global(.area-pill span),
+:global(html[data-theme="light"]) .page :global(.cta-strip h2),
+:global(html[data-theme="light"]) .page :global(.cta-phone) {
+  color: #111;
+}
+
+:global(html[data-theme="light"]) .page :global(.hero p),
+:global(html[data-theme="light"]) .page :global(.section-sub),
+:global(html[data-theme="light"]) .page :global(.service-card p),
+:global(html[data-theme="light"]) .page :global(.why-list-text span),
+:global(html[data-theme="light"]) .page :global(.testi-text),
+:global(html[data-theme="light"]) .page :global(.testi-name span),
+:global(html[data-theme="light"]) .page :global(.footer-copy),
+:global(html[data-theme="light"]) .page :global(.areas-note),
+:global(html[data-theme="light"]) .page :global(.contact-info-item strong),
+:global(html[data-theme="light"]) .page :global(.form-group label) {
+  color: #4b5563;
+}
+
+:global(html[data-theme="light"]) .page :global(.contact-info-item a) {
+  color: #111;
+}
+
+:global(html[data-theme="light"]) .page :global(.footer-socials a) {
+  color: #374151;
+}
+
+:global(html[data-theme="dark"]) .page {
+  --black: #080808;
+  --black-mid: #111111;
+  --text: #f0f0f0;
+  --text-muted: #8a8a8a;
+  --border: rgba(224, 21, 21, 0.25);
+}
+
 .page :global(*) {
   box-sizing: border-box;
 }
@@ -45,6 +110,12 @@
 }
 
 .page :global(.logo-area) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.page :global(.topbar-actions) {
   display: flex;
   align-items: center;
   gap: 12px;

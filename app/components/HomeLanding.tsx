@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import styles from "./homeLanding.module.css";
+import ThemeToggle from "./ThemeToggle";
 import {
   CONTACT,
   heroSlides,
@@ -80,7 +81,7 @@ export default function HomeLanding() {
         <div className="logo-area">
           <a href="#home" style={{ display: "flex", alignItems: "center" }}>
             <img
-              src="https://wnculxpphnditrymgpzv.supabase.co/storage/v1/object/public/page-assets/aee4a4e2-d2b4-466f-92f1-0cf4fd74e9f7/0a84a4a5-0450-4643-992b-82531adff889/1776683788571-WhatsApp-Image-2026-04-20-at-16-46-04.jpg"
+              src="/logo_dark.svg"
               alt="Diesel Performance - Truck Repair Specialists"
               style={{
                 height: "56px",
@@ -120,15 +121,18 @@ export default function HomeLanding() {
             </a>
           </li>
         </ul>
-        <button
-          className="hamburger"
-          onClick={() => setIsMobileNavOpen((prev) => !prev)}
-          aria-label="Menu"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+        <div className="topbar-actions">
+          <ThemeToggle />
+          <button
+            className="hamburger"
+            onClick={() => setIsMobileNavOpen((prev) => !prev)}
+            aria-label="Menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </header>
 
       <nav className={`mobile-nav ${isMobileNavOpen ? "open" : ""}`} id="mobileNav">
