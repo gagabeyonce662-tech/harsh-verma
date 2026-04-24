@@ -8,9 +8,14 @@ export default function Header() {
       {/* Logo Area */}
       <Link href="/" className="flex items-center">
         <img
+          src="/logo_bright.svg"
+          alt="Diesel Performance - Truck Repair Specialists"
+          className="header-logo header-logo-light h-12 w-auto"
+        />
+        <img
           src="/logo_dark.svg"
           alt="Diesel Performance - Truck Repair Specialists"
-          className="h-12 w-auto rounded-sm border border-red-500/40 bg-black p-1"
+          className="header-logo header-logo-dark h-12 w-auto"
         />
       </Link>
 

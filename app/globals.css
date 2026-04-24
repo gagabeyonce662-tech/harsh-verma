@@ -58,3 +58,28 @@
     min-height: max(884px, 100dvh);
   }
 }
+
+.header-logo {
+  display: none;
+}
+
+/* Default/fallback: dark logo (pre-hydration and dark theme) */
+.header-logo-dark {
+  display: block;
+}
+
+html[data-theme="light"] .header-logo-dark {
+  display: none;
+}
+
+html[data-theme="light"] .header-logo-light {
+  display: block;
+}
+
+html[data-theme="dark"] .header-logo-dark {
+  display: block;
+}
+
+html[data-theme="dark"] .header-logo-light {
+  display: none;
+}
