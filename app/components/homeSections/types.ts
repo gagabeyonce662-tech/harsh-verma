@@ -11,4 +11,5 @@ export type ContactSectionProps = {
 export type HeroSectionProps = {
   activeSlide: number;
   onDotClick: (index: number) => void;
+  onVideoEnd: () => void;
 };

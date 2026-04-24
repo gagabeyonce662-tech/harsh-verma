@@ -6,6 +6,11 @@ import Header from "./components/Header";
 export const metadata: Metadata = {
   title: "Diesel Performance Truck Repair",
   description: "Expert diagnostics and heavy-duty repair",
+  icons: {
+    icon: "/logo_bright.svg",
+    shortcut: "/logo_bright.svg",
+    apple: "/logo_bright.svg",
+  },
 };
 
 export default function RootLayout({

@@ -1,16 +1,37 @@
-import { CONTACT, heroSlides } from "../homeLanding.data";
+import { CONTACT, heroMedia } from "../homeLanding.data";
 import { HeroSectionProps } from "./types";
 
-export function HeroSection({ activeSlide, onDotClick }: HeroSectionProps) {
+export function HeroSection({
+  activeSlide,
+  onDotClick,
+  onVideoEnd,
+}: HeroSectionProps) {
   return (
     <div className="hero" id="home">
       <div className="hero-slides">
-        {heroSlides.map((image, index) => (
+        {heroMedia.map((media, index) => (
           <div
-            key={image}
+            key={`${media.type}-${media.src}`}
             className={`hero-slide ${activeSlide === index ? "active" : ""}`}
-            style={{ backgroundImage: `url('${image}')` }}
-          />
+            style={
+              media.type === "image"
+                ? { backgroundImage: `url('${media.src}')` }
+                : undefined
+            }
+          >
+            {media.type === "video" && (
+              <video
+                key={`${media.src}-${activeSlide === index ? "active" : "inactive"}`}
+                autoPlay={activeSlide === index}
+                muted
+                playsInline
+                preload="metadata"
+                onEnded={onVideoEnd}
+              >
+                <source src={media.src} type="video/mp4" />
+              </video>
+            )}
+          </div>
         ))}
       </div>
       <div className="hero-overlay">
@@ -38,9 +59,9 @@ export function HeroSection({ activeSlide, onDotClick }: HeroSectionProps) {
         </div>
       </div>
       <div className="hero-dots" id="heroDots">
-        {heroSlides.map((image, index) => (
+        {heroMedia.map((media, index) => (
           <button
-            key={image}
+            key={`${media.type}-${media.src}`}
             className={`hero-dot ${activeSlide === index ? "active" : ""}`}
             type="button"
             onClick={() => onDotClick(index)}

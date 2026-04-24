@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import styles from "./homeLanding.module.css";
-import { CONTACT, heroSlides } from "./homeLanding.data";
+import { CONTACT, heroMedia } from "./homeLanding.data";
 import {
   AboutSection,
   ContactSection,
@@ -31,12 +31,20 @@ export default function HomeLanding() {
   const [submitError, setSubmitError] = useState("");
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
+    if (heroMedia[activeSlide]?.type === "video") {
+      return;
+    }
 
-    return () => window.clearInterval(timer);
-  }, []);
+    const timer = window.setTimeout(() => {
+      setActiveSlide((prev) => (prev + 1) % heroMedia.length);
+    }, 10000);
+
+    return () => window.clearTimeout(timer);
+  }, [activeSlide]);
+
+  const onHeroVideoEnd = () => {
+    setActiveSlide((prev) => (prev + 1) % heroMedia.length);
+  };
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -78,7 +86,11 @@ export default function HomeLanding() {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       />
 
-      <HeroSection activeSlide={activeSlide} onDotClick={setActiveSlide} />
+      <HeroSection
+        activeSlide={activeSlide}
+        onDotClick={setActiveSlide}
+        onVideoEnd={onHeroVideoEnd}
+      />
       <TrustStrip />
       <AboutSection />
       <ServicesSection />

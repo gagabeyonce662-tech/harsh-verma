@@ -15,6 +15,18 @@ export const heroSlides = [
   "https://wnculxpphnditrymgpzv.supabase.co/storage/v1/object/public/clone-pages/aee4a4e2-d2b4-466f-92f1-0cf4fd74e9f7/0a84a4a5-0450-4643-992b-82531adff889/29b7b3fb11b4992b.webp",
 ];
 
+type HeroMediaItem = {
+  type: "image" | "video";
+  src: string;
+};
+
+export const heroMedia: readonly HeroMediaItem[] = [
+  { type: "video", src: "/Engine_Live.mp4" },
+  { type: "video", src: "/Engine_tuning.mp4" },
+  { type: "video", src: "/Peterbilt_progress.mp4" },
+  { type: "video", src: "/abhijeet_truck.mp4" },
+];
+
 export const services = [
   {
     icon: "fa-circle-stop",

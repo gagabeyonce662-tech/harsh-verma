@@ -7,9 +7,15 @@ export function AboutSection() {
       <div className="section-inner">
         <div className="about-grid">
           <div className="about-img-wrap">
-            <img
-              src="https://wnculxpphnditrymgpzv.supabase.co/storage/v1/object/public/clone-pages/aee4a4e2-d2b4-466f-92f1-0cf4fd74e9f7/0a84a4a5-0450-4643-992b-82531adff889/0af850265b9f374b.webp"
-              alt="Diesel Performance Shop"
+            <video
+              src="/Logo_live.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/logo_borderless.jpeg"
+              aria-label="Diesel Performance logo animation"
             />
             <div className="about-badge">
               <span className="big">10+</span>
