@@ -106,7 +106,7 @@ export function WhySection() {
         <div className="why-grid">
           <div className="why-img">
             <img
-              src="https://wnculxpphnditrymgpzv.supabase.co/storage/v1/object/public/clone-pages/aee4a4e2-d2b4-466f-92f1-0cf4fd74e9f7/0a84a4a5-0450-4643-992b-82531adff889/da38e4f3482ec6eb.webp"
+              src="/Engine_on_the_shop_floor.png"
               alt="Why Choose Diesel Performance"
             />
             <div className="why-img-overlay">

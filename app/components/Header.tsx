@@ -1,8 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import { CONTACT } from "./homeLanding.data";
 
 export default function Header() {
+  const pathname = usePathname();
+  const isGalleryRoute = pathname.startsWith("/gallery");
+  const isHomeRoute = pathname === "/";
+  const navClass = (isActive: boolean) =>
+    `${isActive ? "text-primary bg-surface-container-low" : "text-on-surface"} hover:bg-surface-container-low px-3 py-2 rounded-sm transition-colors`;
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface flex justify-between items-center px-6 py-4 border-b border-surface-container-high">
       {/* Logo Area */}
@@ -23,25 +32,27 @@ export default function Header() {
       <nav className="hidden md:flex items-center gap-8 font-headline font-bold text-sm tracking-tighter uppercase">
         <Link
           href="/#about"
-          className="text-primary hover:bg-surface-container-low px-3 py-2 rounded-sm transition-colors"
+          className={navClass(isHomeRoute)}
+          aria-current={isHomeRoute ? "page" : undefined}
         >
           About
         </Link>
         <Link
           href="/#services"
-          className="text-on-surface hover:bg-surface-container-low px-3 py-2 rounded-sm transition-colors"
+          className={navClass(false)}
         >
           Services
         </Link>
         <Link
           href="/gallery"
-          className="text-on-surface hover:bg-surface-container-low px-3 py-2 rounded-sm transition-colors"
+          className={navClass(isGalleryRoute)}
+          aria-current={isGalleryRoute ? "page" : undefined}
         >
           Gallery
         </Link>
         <Link
           href="/#contact"
-          className="text-on-surface hover:bg-surface-container-low px-3 py-2 rounded-sm transition-colors"
+          className={navClass(false)}
         >
           Contact
         </Link>
