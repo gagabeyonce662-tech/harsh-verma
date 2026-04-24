@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 export const metadata: Metadata = {
   title: "Diesel Performance Truck Repair",
@@ -20,7 +22,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        <main className="pt-24 min-h-screen">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
