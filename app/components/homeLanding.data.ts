@@ -22,6 +22,7 @@ type HeroMediaItem = {
 
 export const heroMedia: readonly HeroMediaItem[] = [
   { type: "video", src: "/abhijeet_truck.mp4" },
+  { type: "video", src: "/Peterbilt_video.mp4" },
   { type: "video", src: "/Peterbilt_progress.mp4" },
   { type: "video", src: "/Engine_tuning.mp4" },
   { type: "video", src: "/Engine_Live.mp4" },

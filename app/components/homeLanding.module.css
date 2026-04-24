@@ -301,17 +301,6 @@
   padding: 120px 8% 80px;
 }
 
-.page :global(.hero-overlay::after) {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(to bottom, transparent, var(--red), transparent);
-  pointer-events: none;
-}
-
 .page :global(.hero-tag) {
   background: var(--red);
   color: #fff;
@@ -517,6 +506,67 @@
 
 .page :global(section) {
   padding: 90px 24px;
+}
+
+.page :global(.section-truck-strip) {
+  position: relative;
+  height: 56px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  overflow: hidden;
+}
+
+.page :global(.section-truck-strip .truck-marquee) {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: truck-track-right 22s linear infinite;
+  will-change: transform;
+  height: 100%;
+}
+
+.page :global(.section-truck-strip .truck-track) {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 44px;
+  min-width: 100vw;
+  padding: 0 22px;
+  height: 100%;
+}
+
+.page :global(.section-truck-strip .truck-icon) {
+  color: var(--red);
+  font-size: 1.2rem;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.page :global(.section-truck-strip .truck-icon i) {
+  transform: scaleX(1);
+}
+
+.page :global(.section-truck-strip.reverse .truck-marquee) {
+  animation-name: truck-track-right;
+}
+
+@keyframes truck-track-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes truck-track-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .page :global(.section-inner) {

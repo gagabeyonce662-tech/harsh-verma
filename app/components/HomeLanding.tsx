@@ -25,6 +25,40 @@ function formDataToRecord(formData: FormData): Record<string, FormDataEntryValue
   return data;
 }
 
+function SectionTruckStrip({
+  reverse = false,
+  first = false,
+}: {
+  reverse?: boolean;
+  first?: boolean;
+}) {
+  const trucks = Array.from({ length: 14 });
+
+  return (
+    <div
+      className={`section-truck-strip ${reverse ? "reverse" : ""} ${first ? "first-strip" : ""}`}
+      aria-hidden="true"
+    >
+      <div className="truck-marquee">
+        <div className="truck-track">
+          {trucks.map((_, index) => (
+            <span key={`truck-a-${index}`} className="truck-icon">
+              <i className="fa fa-truck-moving" />
+            </span>
+          ))}
+        </div>
+        <div className="truck-track" aria-hidden="true">
+          {trucks.map((_, index) => (
+            <span key={`truck-b-${index}`} className="truck-icon">
+              <i className="fa fa-truck-moving" />
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function HomeLanding() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
@@ -92,17 +126,25 @@ export default function HomeLanding() {
         onVideoEnd={onHeroVideoEnd}
       />
       <TrustStrip />
+      <SectionTruckStrip first />
       <AboutSection />
+      <SectionTruckStrip reverse />
       <ServicesSection />
+      <SectionTruckStrip />
       <WhySection />
+      <SectionTruckStrip reverse />
       <WorkGallerySection />
+      <SectionTruckStrip />
       <TestimonialsSection />
+      <SectionTruckStrip reverse />
       <CtaStrip />
+      <SectionTruckStrip />
       <ContactSection
         submitStatus={submitStatus}
         submitError={submitError}
         onSubmit={onSubmit}
       />
+      <SectionTruckStrip reverse />
       <ServiceAreasSection />
     </div>
   );
