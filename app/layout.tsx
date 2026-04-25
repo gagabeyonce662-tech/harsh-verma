@@ -21,6 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="font-sans" suppressHydrationWarning>
       <head>
+        <link
+          rel="preload"
+          href="/abhijeet_truck.mp4"
+          as="video"
+          type="video/mp4"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var k='app-theme';var s=localStorage.getItem(k);var t=(s==='light'||s==='dark')?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,

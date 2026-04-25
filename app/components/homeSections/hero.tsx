@@ -1,11 +1,31 @@
 import { CONTACT, heroMedia } from "../homeLanding.data";
 import { HeroSectionProps } from "./types";
+import { useEffect, useRef } from "react";
 
 export function HeroSection({
   activeSlide,
   onDotClick,
   onVideoEnd,
 }: HeroSectionProps) {
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  useEffect(() => {
+    videoRefs.current.forEach((video, index) => {
+      if (!video) {
+        return;
+      }
+
+      if (index === activeSlide) {
+        void video.play().catch(() => {
+          // Autoplay can fail in restrictive browser modes.
+        });
+        return;
+      }
+
+      video.pause();
+    });
+  }, [activeSlide]);
+
   return (
     <div className="hero" id="home">
       <div className="hero-slides">
@@ -21,11 +41,14 @@ export function HeroSection({
           >
             {media.type === "video" && (
               <video
-                key={`${media.src}-${activeSlide === index ? "active" : "inactive"}`}
-                autoPlay={activeSlide === index}
+                ref={(el) => {
+                  videoRefs.current[index] = el;
+                }}
+                key={media.src}
                 muted
                 playsInline
-                preload="metadata"
+                preload={index === 0 ? "auto" : "metadata"}
+                poster={media.poster}
                 onEnded={onVideoEnd}
               >
                 <source src={media.src} type="video/mp4" />

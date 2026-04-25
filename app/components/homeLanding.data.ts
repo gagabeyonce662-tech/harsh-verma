@@ -18,14 +18,35 @@ export const heroSlides = [
 type HeroMediaItem = {
   type: "image" | "video";
   src: string;
+  poster?: string;
 };
 
 export const heroMedia: readonly HeroMediaItem[] = [
-  { type: "video", src: "/abhijeet_truck.mp4" },
-  { type: "video", src: "/Peterbilt_video.mp4" },
-  { type: "video", src: "/Peterbilt_progress.mp4" },
-  { type: "video", src: "/Engine_tuning.mp4" },
-  { type: "video", src: "/Engine_Live.mp4" },
+  {
+    type: "video",
+    src: "/abhijeet_truck.mp4",
+    poster: "/Peterbilt engine.jpeg",
+  },
+  {
+    type: "video",
+    src: "/Peterbilt_video.mp4",
+    poster: "/Caterpillar_engine_2.jpeg",
+  },
+  {
+    type: "video",
+    src: "/Peterbilt_progress.mp4",
+    poster: "/Caterpillar_engine.jpeg",
+  },
+  {
+    type: "video",
+    src: "/Engine_tuning.mp4",
+    poster: "/Engine_on_the_shop_floor.png",
+  },
+  {
+    type: "video",
+    src: "/Engine_Live.mp4",
+    poster: "/Piston brackets.jpeg",
+  },
 ];
 
 export const services = [
